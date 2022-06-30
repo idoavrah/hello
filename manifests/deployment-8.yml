@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "mycluster-a0f8"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "mycluster-a0f8"
+  template:
+    metadata:
+      labels:
+        app: "mycluster-a0f8"
+    spec:
+      containers:
+        - name: "mycluster-a0f8"
+          image: "mycoolacr.azurecr.io/mycluster"
+          ports:
+          - containerPort: 80
