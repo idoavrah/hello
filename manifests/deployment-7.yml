@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "mycluster-77a2"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "mycluster-77a2"
+  template:
+    metadata:
+      labels:
+        app: "mycluster-77a2"
+    spec:
+      containers:
+        - name: "mycluster-77a2"
+          image: "mycoolacr.azurecr.io/mycluster"
+          ports:
+          - containerPort: 80
